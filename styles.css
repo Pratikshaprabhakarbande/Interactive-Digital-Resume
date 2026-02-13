@@ -1,0 +1,86 @@
+:root{
+  --bg: #0b0f0e;
+  --card: rgba(255,255,255,0.03);
+  --muted: #9aa7b1;
+  --accent-green: #00ff96;
+  --accent-cyan: #00d4ff;
+  --glass: rgba(255,255,255,0.04);
+  --maxw:1100px;
+  --radius:12px;
+}
+html,body{font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+
+/* Terminal font for headings */
+h1,h2,h3,h4,h5{font-family: 'Share Tech Mono', 'Roboto Mono', monospace;color:var(--accent-green)}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;background-color:var(--bg);color:#dfeaf0;line-height:1.5;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+}
+.container{max-width:var(--maxw);margin:0 auto;padding:28px}
+.nav-row{display:flex;align-items:center;justify-content:space-between}
+.site-header{backdrop-filter:blur(8px);position:sticky;top:0;z-index:40;background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.25));border-bottom:1px solid rgba(255,255,255,0.03)}
+.logo{font-weight:700;margin:0;color:var(--accent-green)}
+.nav a{color:var(--muted);margin-left:18px;text-decoration:none;font-weight:600}
+.menu-btn{display:none;background:none;border:0;color:var(--muted);font-size:22px}
+
+.hero{padding:64px 0}
+.hero-grid{display:grid;grid-template-columns:1fr 320px;gap:28px;align-items:start}
+.hero-text h2{margin:0 0 12px;font-size:28px}
+.lead{color:var(--muted);margin:0 0 18px;min-height:42px}
+.hero-card{background:var(--card);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:var(--radius);padding:16px;border:1px solid rgba(0,255,150,0.06);box-shadow:0 6px 30px rgba(0,200,150,0.03), inset 0 1px 0 rgba(255,255,255,0.02)}
+.card-inner h3{margin:0 0 12px;color:var(--accent-green)}
+.quick-info{list-style:none;padding:0;margin:0;color:var(--muted)}
+
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;transition:box-shadow .18s, transform .12s}
+.btn.primary{background:linear-gradient(90deg, rgba(0,255,150,0.06), rgba(0,212,255,0.04));border:1px solid rgba(0,255,150,0.12);color:var(--accent-green)}
+.btn.outline{border:1px solid rgba(255,255,255,0.06);color:var(--muted);background:transparent}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 30px rgba(0,255,150,0.12), 0 0 24px rgba(0,212,255,0.06)}
+
+.section{padding:40px 0}
+.section h2{color:var(--accent-green);margin:0 0 12px}
+.skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.skill-card{background:var(--card);padding:14px;border-radius:10px;border:1px solid rgba(0,255,150,0.04);backdrop-filter:blur(6px);box-shadow:0 6px 24px rgba(0,255,150,0.02)}
+
+.project-list .project{background:var(--card);padding:14px;border-radius:10px;margin-bottom:12px;border:1px solid rgba(0,255,150,0.03);backdrop-filter:blur(6px);box-shadow:0 8px 40px rgba(0,200,160,0.02)}
+
+.exp-item{margin-bottom:12px}
+
+.site-footer{padding:18px 0;border-top:1px solid rgba(255,255,255,0.02);text-align:center;color:var(--muted)}
+
+/* Cyber grid overlay */
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px);background-size:200px 200px,200px 200px;opacity:0.12}
+
+/* Canvas layers */
+#matrixCanvas, #bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none;width:100%;height:100%;display:block}
+
+/* ensure content above canvas */
+main, .site-header, .site-footer{position:relative;z-index:1}
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s cubic-bezier(.2,.9,.2,1)}
+.reveal.visible{opacity:1;transform:none}
+
+/* small improvements */
+.hero-text h2{letter-spacing:0.4px}
+
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;}
+  .nav{display:none}
+  .menu-btn{display:block}
+  .skill-grid{grid-template-columns:1fr}
+}
+
+/* subtle animated background lines */
+body::after{content:'';position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(transparent 96%, rgba(0,255,150,0.02) 100%);background-size:1px 24px;mix-blend-mode:overlay}
+
+.contact a{color:var(--accent)}
+
+/* Background canvas sits behind content */
+#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none;width:100%;height:100%;display:block}
+
+/* make page content above the canvas */
+main, .site-header, .site-footer{position:relative;z-index:1}
+
