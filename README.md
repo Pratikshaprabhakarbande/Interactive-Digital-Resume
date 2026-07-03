@@ -36,10 +36,12 @@ graph LR
     E -->|No| B
 ```
 🛠️ Key Skills
+
 Security: VAPT, Threat Hunting, Incident Response.
 Tech Stack: Python, JavaScript, OCI, Docker.
 
 📧 Let's Collaborate
+
 GitHub: @Pratikshaprabhakarbande
 Goal: Seeking innovative roles in Cybersecurity and Cloud Engineering.
 Designed, coded, and deployed by Pratiksha Bande.
