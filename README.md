@@ -42,6 +42,6 @@ Tech Stack: Python, JavaScript, OCI, Docker.
 
 📧 Let's Collaborate
 
-GitHub: @Pratikshaprabhakarbande
+GitHub: https://github.com/Pratikshaprabhakarbande
 Goal: Seeking innovative roles in Cybersecurity and Cloud Engineering.
 Designed, coded, and deployed by Pratiksha Bande.
